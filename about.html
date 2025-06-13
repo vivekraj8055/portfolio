@@ -3,34 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About Me - Portfolio</title>
+    <title>About Vivek GR | Full-Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header (Consistent with index.html) -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">Vivek GR</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <button id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <section class="about-me">
-        <h2>About Me</h2>
-        <!-- Profile Picture -->
-        <div class="profile-container">
-            <img src="profile picture.jpg" alt="Vivek GR" class="profile-img">
+    <!-- About Me Section -->
+    <section class="about">
+        <div class="container">
+            <h1 class="section-title">About <span class="highlight">Me</span></h1>
+            <div class="about-grid">
+                <!-- Profile Image -->
+                <div class="profile-img-container">
+                    
+                    <div class="img-border"></div>
+                </div>
+                <!-- Bio -->
+                <div class="bio">
+                    <h2>Full-Stack Developer</h2>
+                    <p>	
+                        Hi, I'm <strong>Vivek GR</strong>, a passionate developer specializing in building 
+                        scalable web applications with modern technologies. Fresh graduate with hands-on 
+                        experience in <strong>React, Node.js, and MongoDB</strong>, eager to contribute to 
+                        impactful projects.
+                    </p>
+                    <div class="personal-info">
+                        <div>
+                            <span><i class="fas fa-envelope"></i> vivekraj65407@gmail.com</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
+                        </div>
+                        <div>
+                            <span><i class="fas fa-graduation-cap"></i> Computer Science Graduate</span>
+                            <span><i class="fas fa-code"></i> 5+ Projects Completed</span>
+                        </div>
+                    </div>
+                    <a href="resume.html" class="btn btn-primary">View Resume</a>
+                </div>
+            </div>
         </div>
-
-        <p>Hello, I am [Vivek GR], a passionate [Full stack development]. I am a fresh graduate seeking a job in [Technical field]. My skills include HTML, CSS, JavaScript, and more. I am eager to grow professionally and contribute to exciting projects!</p>
     </section>
 
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>HTML/CSS</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>JavaScript</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>React</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Node.js</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education/Experience (Optional) -->
+    <section class="timeline">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Journey</span></h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2021 - 2024</div>
+                <div class="timeline-content">
+                    <h3>BCA - Bachelor of Computer Applications</h3>
+                    <p>Nagarjuna Degree College</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Mar - Apr 2023</div>
+                <div class="timeline-content">
+                    <h3>Web Development Intern</h3>
+                    <p>Crans Varsity Private Limited</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Portfolio | All rights reserved</p>
+        <div class="container">
+            <p>&copy; 2025 Vivek GR. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle (Consistent with index.html)
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.innerHTML = document.body.classList.contains('dark-mode') 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+
+        // Animate Skill Bars on Scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        function animateSkills() {
+            skillBars.forEach(bar => {
+                const width = bar.parentElement.previousElementSibling.lastElementChild.textContent;
+                if (isElementInViewport(bar)) {
+                    bar.style.width = width;
+                }
+            });
+        }
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+        window.addEventListener('scroll', animateSkills);
+        animateSkills(); // Run once on load
+    </script>
 </body>
 </html>
