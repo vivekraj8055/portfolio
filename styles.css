@@ -804,3 +804,124 @@ footer {
         right: auto;
     }
 }
+/* Additional Resume Styles */
+.resume-download {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.print-btn {
+    margin-left: 15px;
+}
+
+.languages-list {
+    list-style: none;
+}
+
+.languages-list li {
+    margin-bottom: 15px;
+}
+
+.language-name {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.certifications-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cert-item {
+    background: rgba(6, 174, 213, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.cert-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.cert-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.cert-link {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.cert-link:hover {
+    text-decoration: underline;
+}
+
+.company {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.achievements-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.achievements-list li {
+    margin-bottom: 10px;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
+    header, footer, #backToTop, .resume-download {
+        display: none;
+    }
+
+    .resume {
+        padding: 0;
+    }
+
+    .resume-grid {
+        display: block;
+    }
+
+    .resume-left, .resume-right {
+        width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .btn {
+        display: none;
+    }
+}
