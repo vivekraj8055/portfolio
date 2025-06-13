@@ -3,96 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications - Vivek GR</title>
+    <title>Resume | Vivek GR</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
-            <ul>
+            <div class="logo">Vivek GR</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="certification.html">Certifications</a></li> <!-- New link -->
+                <li><a href="resume.html" class="active">Resume</a></li>
             </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <button id="themeToggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
         </nav>
     </header>
 
-    <section class="certifications">
-        <h1>Certifications</h1>
-        <ul>
-<li>
-                <h3>BCA</h3>
-                <p>Bachelor of Computer Applications-on projects.</p>
-                <p><strong>Issued By:</strong> Nagarjuna Degree College| <strong>Date:</strong> 2021-2024</p>
-                <p><a href="https://drive.google.com/file/d/1YqF3yTSfkvkbs205Qguo27wCVRKmkqxx/view?usp=sharing">Download Certificate</a></p>
-            </li>
+    <!-- Resume Section -->
+    <section class="resume">
+        <div class="container">
+            <h1 class="section-title" data-aos="fade-down">My <span class="highlight">Resume</span></h1>
+            
+            <!-- Resume Download Button -->
+            <div class="resume-download" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://docs.google.com/document/d/1-mq1qx7d4RfU7z9y1WuVU6Zq-h5NsvPo/edit?usp=sharing&ouid=108408071412155719004&rtpof=true&sd=true" 
+                   target="_blank" 
+                   class="btn btn-primary pulse">
+                   <i class="fas fa-download"></i> Download Full Resume (PDF)
+                </a>
+                <a href="#" class="btn btn-outline print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Print Resume
+                </a>
+            </div>
 
-            <li>
-                <h3>Power BI</h3>
-                <p>Youth Skilling & Employability initative-on projects.</p>
-                <p><strong>Issued By:</strong> ICT ACADEMY | <strong>Date:</strong> Aug 01-Aug 15 /2023</p>
-                <p><a href="https://drive.google.com/file/d/1FthEcAnKxDnsQc9Nq20QpW3fRQsnwvcV/view?usp=sharing" target="_blank">Download Certificate</a></p>
-            </li>
-            <li>
-                <h3>Angular JS</h3>
-                <p>Advanced  Use AngularJS to Display Certificates Dynamically.</p>
-                <p><strong>Issued By:</strong>  NDC | <strong>Date:</strong> Jan 01-20 /2023</p>
-                <p><a href="https://drive.google.com/file/d/1zW5JEAX2aQVTFWctLgP5q0ghZyI2n1uM/view?usp=sharing" target="_blank">Download Certificate</a></p>
-            </li>
-            <li>
-                <h3>Data Science</h3>
-                <p>The goal of data science is to extract meaningful insights from data and use them to inform decisions, predict outcomes, and optimize processes..</p>
-                <p><strong>Issued By:</strong> NDC| <strong>Date:</strong> March 01-30 /2022</p>
-                <p><a href="https://drive.google.com/file/d/1DD7fRmaUO7Rg3r2nJsTvc_nrVMO54aOd/view?usp=sharing" target="_blank">Download Certificate</a></p>
-            </li>
- <li>
-                <h3>Customer Relationship Management System</h3>
-                <p>The goal of a CRM system is to improve customer relationships, satisfaction, and business growth through efficient management of interactions and data.-on projects.</p>
-                <p><strong>Issued By:</strong> NIIT Foundation | <strong>Date:</strong> NOV 05-30 /2024</p>
-                <p><a href="https://drive.google.com/file/d/1TJH7U-vc8rM6XZ0M_BFF-tqImGw-YMml/view?usp=sharing">Download Certificate</a></p>
-            </li>
- <li>
-                <h3>HTML & CSS</h3>
-                <p>HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are the foundational technologies used to create and design web pages.
+            <!-- Resume Content -->
+            <div class="resume-grid">
+                <!-- Left Column -->
+                <div class="resume-left">
+                    <!-- Contact -->
+                    <div class="resume-section" data-aos="fade-right">
+                        <h2><i class="fas fa-user"></i> Contact</h2>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> vivekraj65407@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +91 8296924601</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                            <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/vivek-gr" target="_blank">linkedin.com/in/vivek-gr</a></li>
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/vivek-gr" target="_blank">github.com/vivek-gr</a></li>
+                            <li><i class="fas fa-globe"></i> <a href="#" target="_blank">vivekgr.dev</a></li>
+                        </ul>
+                    </div>
 
-HTML Basics.</p>
-                <p><strong>Issued By:</strong>Nagarjuna Degree College | <strong>Date:</strong> Dec 01-30/ 2023</p>
-                <p><a href="https://drive.google.com/file/d/1nMEVjUgLanvdiU3gqsygI5HAlvrpcU8a/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                    <!-- Skills -->
+                    <div class="resume-section" data-aos="fade-right" data-aos-delay="100">
+                        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                        <ul class="skills-list">
+                            <li>
+                                <span class="skill-name">HTML/CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">MongoDB</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 65%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">Git</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
+                    <!-- Languages -->
+                    <div class="resume-section" data-aos="fade-right" data-aos-delay="150">
+                        <h2><i class="fas fa-language"></i> Languages</h2>
+                        <ul class="languages-list">
+                            <li>
+                                <span class="language-name">English</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="language-name">Hindi</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="language-name">Kannada</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
 
+                    <!-- Certifications -->
+                    <div class="resume-section" data-aos="fade-right" data-aos-delay="200">
+                        <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                        <div class="certifications-mini">
+                            <div class="cert-item">
+                                <h4>Full Stack Development</h4>
+                                <p>Udemy | 2023</p>
+                                <a href="#" class="cert-link">View Credential</a>
+                            </div>
+                            <div class="cert-item">
+                                <h4>React Advanced Concepts</h4>
+                                <p>Coursera | 2022</p>
+                                <a href="#" class="cert-link">View Credential</a>
+                            </div>
+                            <div class="cert-item">
+                                <h4>JavaScript Algorithms</h4>
+                                <p>freeCodeCamp | 2021</p>
+                                <a href="#" class="cert-link">View Credential</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <li>
-                <h3>Ed Cell</h3>
-                <p>A Start Up Mela -on projects.</p>
-                <p><strong>Issued By:</strong>Nagarjuna Degree College | <strong>Date:</strong> 14 july- 2023 /2023</p>
-                <p><a href="https://drive.google.com/file/d/1XeS0M7EPeFl6F6vn-uKw3WvgX9apDaec/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                <!-- Right Column -->
+                <div class="resume-right">
+                    <!-- Professional Summary -->
+                    <div class="resume-section" data-aos="fade-left">
+                        <h2><i class="fas fa-briefcase"></i> Professional Summary</h2>
+                        <p>Full Stack Developer with 3+ years of experience building responsive web applications using modern JavaScript frameworks. Passionate about creating efficient, scalable solutions with clean code. Strong problem-solving skills and ability to work in agile environments. Specialized in MERN stack development with expertise in RESTful API design and database optimization.</p>
+                    </div>
 
-<li>
-                <h3>Blood Bank and Donar Management System</h3>
-                <p> WEB -projects.</p>
-                <p><strong>Issued By:</strong> SFA | <strong>Date:</strong> 05-30 March/ 2023</p>
-                <p><a href="https://drive.google.com/file/d/1m1VkgeNeSdj8r4v7RUwYhog0kqrMposo/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                    <!-- Experience -->
+                    <div class="resume-section" data-aos="fade-left" data-aos-delay="100">
+                        <h2><i class="fas fa-suitcase"></i> Work Experience</h2>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021 - Present</div>
+                            <div class="timeline-content">
+                                <h3>Senior Web Developer</h3>
+                                <p class="company">TechSolutions Inc., Bangalore</p>
+                                <ul>
+                                    <li>Led development of 10+ React applications with Node.js backends</li>
+                                    <li>Improved application performance by 40% through code optimization</li>
+                                    <li>Mentored 3 junior developers in best practices</li>
+                                    <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
+                                    <li>Designed database architecture for high-traffic applications</li>
+                                    <li>Integrated third-party services including payment gateways and analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2019 - 2021</div>
+                            <div class="timeline-content">
+                                <h3>Web Developer</h3>
+                                <p class="company">Digital Creations, Bangalore</p>
+                                <ul>
+                                    <li>Developed and maintained 15+ client websites</li>
+                                    <li>Implemented responsive designs improving mobile UX</li>
+                                    <li>Integrated third-party APIs for payment processing</li>
+                                    <li>Reduced page load times by 30% through asset optimization</li>
+                                    <li>Collaborated with designers to implement UI/UX best practices</li>
+                                    <li>Automated deployment processes saving 10+ hours weekly</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2018 - 2019</div>
+                            <div class="timeline-content">
+                                <h3>Frontend Developer Intern</h3>
+                                <p class="company">WebCraft Studios, Bangalore</p>
+                                <ul>
+                                    <li>Assisted in developing responsive web interfaces</li>
+                                    <li>Fixed UI bugs and improved cross-browser compatibility</li>
+                                    <li>Participated in code reviews and team meetings</li>
+                                    <li>Created documentation for frontend components</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-            <li>
-                <h3>Volunteer</h3>
-                <p> Marketing -on projects.</p>
-                <p><strong>Issued By:</strong> SFA | <strong>Date:</strong> 05-30 DEC/ 2025</p>
-                <p><a href="https://drive.google.com/file/d/1uui-TwRC9J4BrVu0bypJR8eEZQq3138N/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                    <!-- Education -->
+                    <div class="resume-section" data-aos="fade-left" data-aos-delay="150">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2015 - 2019</div>
+                            <div class="timeline-content">
+                                <h3>Bachelor of Engineering in Computer Science</h3>
+                                <p class="company">VTU University, Bangalore</p>
+                                <ul>
+                                    <li>Graduated with First Class Honors (75%)</li>
+                                    <li>Specialized in Web Technologies and Database Systems</li>
+                                    <li>Final Year Project: E-commerce Platform using MERN Stack</li>
+                                    <li>Active member of Computer Science Society</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2013 - 2015</div>
+                            <div class="timeline-content">
+                                <h3>Pre-University College (PCMB)</h3>
+                                <p class="company">Sri Chaitanya College, Bangalore</p>
+                                <ul>
+                                    <li>Scored 92% in final examinations</li>
+                                    <li>Participated in inter-college science competitions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Projects -->
+                    <div class="resume-section" data-aos="fade-left" data-aos-delay="200">
+                        <h2><i class="fas fa-project-diagram"></i> Key Projects</h2>
+                        <div class="project-item">
+                            <h3>E-commerce Dashboard</h3>
+                            <p class="project-tech">React, Node.js, MongoDB, Redux</p>
+                            <ul>
+                                <li>Built admin dashboard with real-time analytics and inventory management</li>
+                                <li>Integrated with payment gateways and shipping APIs</li>
+                                <li>Reduced server response time by 35% through query optimization</li>
+                            </ul>
+                        </div>
+                        <div class="project-item">
+                            <h3>Task Management App</h3>
+                            <p class="project-tech">React, Firebase, Material UI</p>
+                            <ul>
+                                <li>Developed collaborative task management application</li>
+                                <li>Implemented real-time updates using Firebase</li>
+                                <li>Added drag-and-drop functionality for task organization</li>
+                            </ul>
+                        </div>
+                        <div class="project-item">
+                            <h3>Portfolio Website</h3>
+                            <p class="project-tech">HTML, CSS, JavaScript, GSAP</p>
+                            <ul>
+                                <li>Created interactive portfolio with animations</li>
+                                <li>Optimized for performance and accessibility</li>
+                                <li>Implemented dark mode and responsive design</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <!-- Add more certifications here -->
-        </ul>
+                    <!-- Achievements -->
+                    <div class="resume-section" data-aos="fade-left" data-aos-delay="250">
+                        <h2><i class="fas fa-trophy"></i> Achievements</h2>
+                        <ul class="achievements-list">
+                            <li>Employee of the Month (TechSolutions Inc.) - June 2022</li>
+                            <li>Hackathon Winner - CodeFest 2021</li>
+                            <li>Published article on "Optimizing React Performance" in DevJournal</li>
+                            <li>Speaker at Bangalore Web Developers Meetup 2020</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Portfolio | All rights reserved</p>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Vivek GR. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/vivek-gr" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/vivek-gr" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.opacity = '1';
+            } else {
+                backToTopButton.style.opacity = '0';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
