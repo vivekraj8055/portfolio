@@ -3,45 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Projects - Portfolio</title>
+    <title>Projects | Vivek GR</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header (Consistent with other pages) -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">Vivek GR</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <button id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Projects Section -->
     <section class="projects">
-        <h2>My Projects</h2>
-        <div class="project-card">
-            <h3>Project 1: Blood Donar Management System</h3>
-            <p>Developed a responsive portfolio website using HTML, CSS, and JavaScript,
-[Backend]-PHP,Python.</p>
-        </div>
-        <div class="project-card">
-            <h3>Project 2: Online Book Store</h3>
-            <p>Developed a responsive portfolio website using HTML, CSS, and JavaScript.</p>
-        </div>
-<div class="project-card">
-            <h3>Project 2:Hotel Booking</h3>
-            <p>Developed a responsive portfolio website using HTML, CSS, and JavaScript.</p>
-        </div>
-<div class="project-card">
-            <h3>Project 2: Course Regestration Form</h3>
-            <p>Developed a responsive portfolio website using HTML, CSS, and JavaScript.</p>
+        <div class="container">
+            <h1 class="section-title">My <span class="highlight">Projects</span></h1>
+            
+            <!-- Project Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <button class="btn filter-btn" data-filter="web">Web Dev</button>
+                <button class="btn filter-btn" data-filter="python">Python</button>
+                <button class="btn filter-btn" data-filter="php">PHP</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="project-grid">
+                <!-- Blood Donor Management System -->
+                <div class="project-card" data-category="web php">
+                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
+                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Blood Donor Management System</h3>
+                        <p>Created using HTML, CSS, JavaScript, PHP, and Python. Features donor records management and search functionality.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>PHP</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Online Book Store -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
+                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Online Book Store</h3>
+                        <p>Fully responsive online bookstore interface built with HTML, CSS, and JavaScript.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel Booking Platform -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
+                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Hotel Booking Platform</h3>
+                        <p>Designed and implemented a hotel booking page with custom UI using front-end web technologies.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Registration Form -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
+                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Course Registration Form</h3>
+                        <p>Interactive form with validation for students to register for academic courses online.</p>
+                        <div class="project-tags">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>Forms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Portfolio | All rights reserved</p>
+        <div class="container">
+            <p>&copy; 2025 Vivek GR. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.innerHTML = document.body.classList.contains('dark-mode') 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+
+        // Project Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter projects
+                const filter = button.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
