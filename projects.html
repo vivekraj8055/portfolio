@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Vivek GR</title>
+    <title>Resume | Vivek GR</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,8 +19,9 @@
                 <ul class="nav-links" id="navLinks">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="projects.html">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
@@ -32,93 +33,154 @@
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <section class="projects">
+    <!-- Resume Section -->
+    <section class="resume">
         <div class="container">
-            <h1 class="section-title">My <span class="highlight">Projects</span></h1>
+            <h1 class="section-title">My <span class="highlight">Resume</span></h1>
             
-            <!-- Project Filter Buttons -->
-            <div class="filter-buttons">
-                <button class="btn filter-btn active" data-filter="all">All</button>
-                <button class="btn filter-btn" data-filter="web">Web Dev</button>
-                <button class="btn filter-btn" data-filter="python">Python</button>
-                <button class="btn filter-btn" data-filter="php">PHP</button>
+            <!-- Resume Download Button -->
+            <div class="resume-download">
+                <a href="https://docs.google.com/document/d/1-mq1qx7d4RfU7z9y1WuVU6Zq-h5NsvPo/edit?usp=sharing&ouid=108408071412155719004&rtpof=true&sd=true" 
+                   target="_blank" 
+                   class="btn btn-primary">
+                   <i class="fas fa-download"></i> Download Full Resume (PDF)
+                </a>
             </div>
 
-            <!-- Projects Grid -->
-            <div class="project-grid">
-                <!-- Blood Donor Management System -->
-                <div class="project-card" data-category="web php">
-                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
-                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
-                        </div>
+            <!-- Resume Content -->
+            <div class="resume-grid">
+                <!-- Left Column -->
+                <div class="resume-left">
+                    <!-- Contact -->
+                    <div class="resume-section">
+                        <h2><i class="fas fa-user"></i> Contact</h2>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> vivekraj65407@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +91 8296924601</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
+                            <li><i class="fab fa-linkedin"></i> <a href="#">linkedin.com/in/vivek-gr</a></li>
+                            <li><i class="fab fa-github"></i> <a href="#">github.com/vivek-gr</a></li>
+                        </ul>
                     </div>
-                    <div class="project-info">
-                        <h3>Blood Donor Management System</h3>
-                        <p>Created using HTML, CSS, JavaScript, PHP, and Python. Features donor records management and search functionality.</p>
-                        <div class="project-tags">
-                            <span>HTML/CSS</span>
-                            <span>PHP</span>
-                            <span>Python</span>
+
+                    <!-- Skills -->
+                    <div class="resume-section">
+                        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                        <ul class="skills-list">
+                            <li>
+                                <span class="skill-name">HTML/CSS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%;"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="skill-name">MongoDB</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="resume-section">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h3>BCA - Bachelor of Computer Applications</h3>
+                                <p>Nagarjuna Degree College | 2021 - 2024</p>
+                                <p>Percentage: 78%</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3>Science (2nd PUC)</h3>
+                                <p>Nagarjuna Pre University College | 2019 - 2021</p>
+                                <p>Percentage: 67%</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h3>10th Standard</h3>
+                                <p>New Town Public School | 2019</p>
+                                <p>Percentage: 81%</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Online Book Store -->
-                <div class="project-card" data-category="web">
-                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
-                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
-                        </div>
+                <!-- Right Column -->
+                <div class="resume-right">
+                    <!-- Objective -->
+                    <div class="resume-section">
+                        <h2><i class="fas fa-bullseye"></i> Objective</h2>
+                        <p>Passionate full-stack developer with expertise in modern web technologies seeking to leverage my skills in HTML, CSS, JavaScript, React, and Node.js to build innovative solutions and grow professionally in a dynamic tech environment.</p>
                     </div>
-                    <div class="project-info">
-                        <h3>Online Book Store</h3>
-                        <p>Fully responsive online bookstore interface built with HTML, CSS, and JavaScript.</p>
-                        <div class="project-tags">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>Responsive</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Hotel Booking Platform -->
-                <div class="project-card" data-category="web">
-                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
-                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
+                    <!-- Experience -->
+                    <div class="resume-section">
+                        <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h3>Web Development Intern</h3>
+                                <p>Crans Varsity Private Limited | Mar - Apr 2023</p>
+                                <ul>
+                                    <li>Developed responsive web interfaces using HTML, CSS, and JavaScript</li>
+                                    <li>Collaborated on backend API development with Node.js</li>
+                                    <li>Implemented database solutions with MongoDB</li>
+                                </ul>
+                                <a href="https://drive.google.com/file/d/141Uzp8Y2RAiDO6yzre1AE7PAL8AP0qRb/view?usp=sharing" 
+                                   target="_blank" 
+                                   class="btn btn-small">
+                                   <i class="fas fa-download"></i> Internship Certificate
+                                </a>
+                            </div>
+                            <div class="timeline-item">
+                                <h3>Volunteer - Marketing</h3>
+                                <p>SFA Championship | Dec 2024</p>
+                                <ul>
+                                    <li>Participated in marketing strategy development</li>
+                                    <li>Created promotional content for digital platforms</li>
+                                </ul>
+                                <a href="https://drive.google.com/file/d/1uui-TwRC9J4BrVu0bypJR8eEZQq3138N/view?usp=sharing" 
+                                   target="_blank" 
+                                   class="btn btn-small">
+                                   <i class="fas fa-download"></i> Participation Certificate
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Hotel Booking Platform</h3>
-                        <p>Designed and implemented a hotel booking page with custom UI using front-end web technologies.</p>
-                        <div class="project-tags">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>UI/UX</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Course Registration Form -->
-                <div class="project-card" data-category="web">
-                    <div class="project-img" style="background-image: url('https://via.placeholder.com/400x250');">
-                        <div class="project-links">
-                            <a href="#" class="btn btn-small"><i class="fas fa-eye"></i> Demo</a>
-                            <a href="#" class="btn btn-small"><i class="fab fa-github"></i> Code</a>
+                    <!-- Projects -->
+                    <div class="resume-section">
+                        <h2><i class="fas fa-project-diagram"></i> Key Projects</h2>
+                        <div class="project-item">
+                            <h3>Blood Donor Management System</h3>
+                            <ul>
+                                <li>Built with HTML, CSS, JavaScript, PHP, and Python</li>
+                                <li>Features donor records management and search functionality</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Course Registration Form</h3>
-                        <p>Interactive form with validation for students to register for academic courses online.</p>
-                        <div class="project-tags">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>Forms</span>
+                        <div class="project-item">
+                            <h3>Online Book Store</h3>
+                            <ul>
+                                <li>Fully responsive e-commerce interface</li>
+                                <li>Implemented cart functionality with JavaScript</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -171,28 +233,6 @@
             themeToggle.innerHTML = document.body.classList.contains('dark-mode') 
                 ? '<i class="fas fa-sun"></i>' 
                 : '<i class="fas fa-moon"></i>';
-        });
-
-        // Project Filter
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // Filter projects
-                const filter = button.getAttribute('data-filter');
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
         });
     </script>
 </body>
