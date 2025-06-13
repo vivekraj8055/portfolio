@@ -3,96 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications - Vivek GR</title>
+    <title>Certifications | Vivek GR</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header (Consistent with other pages) -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="certification.html">Certifications</a></li> <!-- New link -->
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">Vivek GR</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="certification.html" class="active">Certifications</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <button id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Certifications Section -->
     <section class="certifications">
-        <h1>Certifications</h1>
-        <ul>
-<li>
-                <h3>BCA</h3>
-                <p>Bachelor of Computer Applications-on projects.</p>
-                <p><strong>Issued By:</strong> Nagarjuna Degree College| <strong>Date:</strong> 2021-2024</p>
-                <p><a href="https://drive.google.com/file/d/1HYcQ6XZeolwyvS-K-6AZsY2RPGIrgxZC/view?usp=sharing">Download Certificate</a></p>
-            </li>
+        <div class="container">
+            <h1 class="section-title">My <span class="highlight">Certifications</span></h1>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <button class="btn filter-btn" data-filter="web">Web Development</button>
+                <button class="btn filter-btn" data-filter="data">Data Science</button>
+                <button class="btn filter-btn" data-filter="other">Other</button>
+            </div>
 
-            <li>
-                <h3>Power BI</h3>
-                <p>Youth Skilling & Employability initative-on projects.</p>
-                <p><strong>Issued By:</strong> ICT ACADEMY | <strong>Date:</strong> Aug 01-Aug 15 /2023</p>
-                <p><a href="https://drive.google.com/file/d/1FthEcAnKxDnsQc9Nq20QpW3fRQsnwvcV/view?usp=sharing" target="_blank">Download Certificate</a></p>
-            </li>
-            <li>
-                <h3>Angular JS</h3>
-                <p>Advanced  Use AngularJS to Display Certificates Dynamically.</p>
-                <p><strong>Issued By:</strong>  NDC | <strong>Date:</strong> Jan 01-20 /2023</p>
-                <p><a href="https://drive.google.com/file/d/1zW5JEAX2aQVTFWctLgP5q0ghZyI2n1uM/view?usp=sharing" target="_blank">Download Certificate</a></p>
-            </li>
-            <li>
-                <h3>Data Science</h3>
-                <p>The goal of data science is to extract meaningful insights from data and use them to inform decisions, predict outcomes, and optimize processes..</p>
-                <p><strong>Issued By:</strong> NDC| <strong>Date:</strong> March 01-30 /2022</p>
-                <p><a href="https://drive.google.com/file/d/1pp1iKbNWLoe1Pr250imM2DnTU8fR9eRi/view?usp=sharing" target="_blank">Download Certificate</a></p>
-            </li>
- <li>
-                <h3>Customer Relationship Management System</h3>
-                <p>The goal of a CRM system is to improve customer relationships, satisfaction, and business growth through efficient management of interactions and data.-on projects.</p>
-                <p><strong>Issued By:</strong> NIIT Foundation | <strong>Date:</strong> NOV 05-30 /2024</p>
-                <p><a href="https://drive.google.com/file/d/1TJH7U-vc8rM6XZ0M_BFF-tqImGw-YMml/view?usp=sharing">Download Certificate</a></p>
-            </li>
- <li>
-                <h3>HTML & CSS</h3>
-                <p>HTML (HyperText Markup Language) and CSS (Cascading Style Sheets) are the foundational technologies used to create and design web pages.
+            <!-- Certifications Grid -->
+            <div class="cert-grid">
+                <!-- BCA -->
+                <div class="cert-card" data-category="other">
+                    <div class="cert-header">
+                                                <h3>BCA Degree</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Bachelor of Computer Applications with project experience.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> Nagarjuna Degree College</span>
+                            <span><i class="fas fa-calendar-alt"></i> 2021–2024</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1YqF3yTSfkvkbs205Qguo27wCVRKmkqxx/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
-HTML Basics.</p>
-                <p><strong>Issued By:</strong>Nagarjuna Degree College | <strong>Date:</strong> Dec 01-30/ 2023</p>
-                <p><a href="https://drive.google.com/file/d/1Y-OVLTkaPPGEKMjUtzD5X1B3XTOh86SG/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                <!-- Power BI -->
+                <div class="cert-card" data-category="data">
+                    <div class="cert-header">
+                        
+                        <h3>Power BI</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Youth Skilling & Employability initiative with hands-on projects.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> ICT Academy</span>
+                            <span><i class="fas fa-calendar-alt"></i> Aug 01–15, 2023</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1Qd7-A82rQbrz0_dB-6pxk2cZctlzeioW/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
+                <!-- AngularJS -->
+                <div class="cert-card" data-category="web">
+                    <div class="cert-header">
+                                                <h3>Angular JS</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Advanced use of AngularJS to display certificates dynamically.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> NDC</span>
+                            <span><i class="fas fa-calendar-alt"></i> Jan 01–20, 2023</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1zW5JEAX2aQVTFWctLgP5q0ghZyI2n1uM/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
+                <!-- Data Science -->
+                <div class="cert-card" data-category="data">
+                    <div class="cert-header">
+                                                <h3>Data Science</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Extracting insights from data to inform decisions and optimize processes.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> NDC</span>
+                            <span><i class="fas fa-calendar-alt"></i> March 01–30, 2022</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1DD7fRmaUO7Rg3r2nJsTvc_nrVMO54aOd/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
-            <li>
-                <h3>Ed Cell</h3>
-                <p>A Start Up Mela -on projects.</p>
-                <p><strong>Issued By:</strong>Nagarjuna Degree College | <strong>Date:</strong> 14 july- 2023 /2023</p>
-                <p><a href="https://drive.google.com/file/d/1XeS0M7EPeFl6F6vn-uKw3WvgX9apDaec/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                <!-- CRM System -->
+                <div class="cert-card" data-category="other">
+                    <div class="cert-header">
+                                                <h3>CRM System</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Improving customer relationships through efficient management systems.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> NIIT Foundation</span>
+                            <span><i class="fas fa-calendar-alt"></i> Nov 05–30, 2024</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1TJH7U-vc8rM6XZ0M_BFF-tqImGw-YMml/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
-<li>
-                <h3>Blood Bank and Donar Management System</h3>
-                <p> WEB -projects.</p>
-                <p><strong>Issued By:</strong> SFA | <strong>Date:</strong> 05-30 March/ 2023</p>
-                <p><a href="https://drive.google.com/file/d/1bG8iN8t72ejXHzpTe9H1kehH4e7u_4Lf/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                <!-- HTML & CSS -->
+                <div class="cert-card" data-category="web">
+                    <div class="cert-header">
+                                                <h3>HTML & CSS</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Foundational technologies used to create and design web pages.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> Nagarjuna Degree College</span>
+                            <span><i class="fas fa-calendar-alt"></i> Dec 01–30, 2023</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1nMEVjUgLanvdiU3gqsygI5HAlvrpcU8a/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
-            <li>
-                <h3>Volunteer</h3>
-                <p> Marketing -on projects.</p>
-                <p><strong>Issued By:</strong> SFA | <strong>Date:</strong> 05-30 DEC/ 2025</p>
-                <p><a href="https://drive.google.com/file/d/1uui-TwRC9J4BrVu0bypJR8eEZQq3138N/view?usp=sharing">Download Certificate</a></p>
-            </li>
+                <!-- Ed Cell -->
+                <div class="cert-card" data-category="other">
+                    <div class="cert-header">
+                                                <h3>Ed Cell</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>A Start-Up Mela -on projects.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> Nagarjuna Degree College</span>
+                            <span><i class="fas fa-calendar-alt"></i> July 14, 2023</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1kOKDfMwtdyWHWltp45sru39uHlbRRGAA/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
+                <!-- Blood Bank & Donor Management -->
+                <div class="cert-card" data-category="web">
+                    <div class="cert-header">
+                                                <h3>Blood Bank & Donor Management</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Web-based project for blood bank records.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> SFA</span>
+                            <span><i class="fas fa-calendar-alt"></i> March 05–30, 2023</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1m1VkgeNeSdj8r4v7RUwYhog0kqrMposo/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
 
-            <!-- Add more certifications here -->
-        </ul>
+                <!-- Volunteer - Marketing -->
+                <div class="cert-card" data-category="other">
+                    <div class="cert-header">
+                                               <h3>Volunteer - Marketing</h3>
+                    </div>
+                    <div class="cert-body">
+                        <p>Participated in a marketing initiative project.</p>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-university"></i> SFA</span>
+                            <span><i class="fas fa-calendar-alt"></i> Dec 05–30, 2025</span>
+                        </div>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://drive.google.com/file/d/1uui-TwRC9J4BrVu0bypJR8eEZQq3138N/view?usp=sharing" 
+                           target="_blank" 
+                           class="btn btn-primary">
+                           <i class="fas fa-download"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Portfolio | All rights reserved</p>
+        <div class="container">
+            <p>&copy; 2025 Vivek GR. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            btn.style.opacity = window.scrollY > 300 ? '1' : '0';
+        });
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            themeToggle.innerHTML = document.body.classList.contains('dark-mode') 
+                ? '<i class="fas fa-sun"></i>' 
+                : '<i class="fas fa-moon"></i>';
+        });
+
+        // Certification Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const certCards = document.querySelectorAll('.cert-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter cards
+                const filter = button.getAttribute('data-filter');
+                certCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
