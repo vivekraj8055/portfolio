@@ -1,294 +1,998 @@
+I'll redesign the resume page using the color palette (#06aed5, #086788, #f2f4f3, #f0c808) and add some additional features. Here's the complete updated code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Resume | Vivek GR</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f2f4f3;
+            --text-color: #333333;
+            --primary-color: #06aed5;
+            --secondary-color: #086788;
+            --highlight-color: #f0c808;
+            --card-bg: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode {
+            --bg-color: #1a1a1a;
+            --text-color: #f2f4f3;
+            --primary-color: #06aed5;
+            --secondary-color: #086788;
+            --highlight-color: #f0c808;
+            --card-bg: #2a2a2a;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--highlight-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after, .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        #themeToggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 20px;
+            transition: transform 0.3s;
+        }
+
+        #themeToggle:hover {
+            transform: rotate(30deg);
+            color: var(--highlight-color);
+        }
+
+        /* Resume Section */
+        .resume {
+            padding: 150px 0 80px;
+            background-color: var(--bg-color);
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .resume-header h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--highlight-color);
+            border-radius: 2px;
+        }
+
+        .resume-header .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background-color: rgba(6, 174, 213, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .contact-info-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(6, 174, 213, 0.2);
+        }
+
+        .contact-info-item i {
+            color: var(--highlight-color);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(6, 174, 213, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(6, 174, 213, 0.3);
+        }
+
+        /* Resume Grid */
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        /* Resume Card Styles */
+        .resume-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border-top: 3px solid var(--highlight-color);
+        }
+
+        .resume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .resume-card h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Skills Section */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background-color: rgba(6, 174, 213, 0.1);
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 174, 213, 0.2), transparent);
+            transition: all 0.5s;
+        }
+
+        .skill-item:hover:before {
+            left: 100%;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(6, 174, 213, 0.2);
+            box-shadow: 0 5px 15px rgba(6, 174, 213, 0.1);
+        }
+
+        /* Timeline Section */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 10px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid var(--highlight-color);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: var(--text-color);
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .timeline-content li:before {
+            content: '▹';
+            position: absolute;
+            left: -20px;
+            color: var(--highlight-color);
+        }
+
+        /* Projects Section */
+        .project-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .project-item:hover {
+            background-color: rgba(6, 174, 213, 0.05);
+        }
+
+        .project-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .project-tech {
+            font-size: 0.9rem;
+            color: var(--highlight-color);
+            margin-bottom: 10px;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 6px rgba(6, 174, 213, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(6, 174, 213, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-color);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icons a:hover {
+            color: var(--highlight-color);
+            transform: translateY(-3px);
+            background-color: rgba(6, 174, 213, 0.1);
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(6, 174, 213, 0.3);
+        }
+
+        #backToTop:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        /* Progress Bars */
+        .progress-container {
+            margin-bottom: 15px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--highlight-color));
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Rating Stars */
+        .rating {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .star {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .star.filled {
+            color: var(--highlight-color);
+        }
+
+        /* New Features */
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: rgba(6, 174, 213, 0.1);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 30px 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume {
+                padding: 120px 0 60px;
+            }
+
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-color);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: left 0.3s ease;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            #themeToggle {
+                margin-left: auto;
+                margin-right: 15px;
+            }
+
+            .skills-list {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resume-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .resume-card {
+                padding: 20px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <nav>
-            <div class="logo">Vivek GR</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="resume.html" class="active">Resume</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <button id="themeToggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo">Vivek GR</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                    <li><a href="certification.html">Certifications</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <button id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+        </div>
     </header>
 
     <!-- Resume Section -->
     <section class="resume">
         <div class="container">
-            <h1 class="section-title" data-aos="fade-down">My <span class="highlight">Resume</span></h1>
-            
-            <!-- Resume Download Button -->
-            <div class="resume-download" data-aos="fade-up" data-aos-delay="100">
-                <a href="https://docs.google.com/document/d/1-mq1qx7d4RfU7z9y1WuVU6Zq-h5NsvPo/edit?usp=sharing&ouid=108408071412155719004&rtpof=true&sd=true" 
-                   target="_blank" 
-                   class="btn btn-primary pulse">
-                   <i class="fas fa-download"></i> Download Full Resume (PDF)
-                </a>
-                <a href="#" class="btn btn-outline print-btn" onclick="window.print()">
-                    <i class="fas fa-print"></i> Print Resume
+            <div class="resume-header animate">
+                <h1>Vivek G R</h1>
+                <p class="subtitle">Full Stack Developer</p>
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8296924601</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>vivekraj65407@gmail.com</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bangalore, India</span>
+                    </div>
+                </div>
+                <a href="final resume VR.pdf" download class="download-btn">
+                    <i class="fas fa-download"></i> Download PDF
                 </a>
             </div>
 
-            <!-- Resume Content -->
             <div class="resume-grid">
                 <!-- Left Column -->
                 <div class="resume-left">
-                    <!-- Contact -->
-                    <div class="resume-section" data-aos="fade-right">
-                        <h2><i class="fas fa-user"></i> Contact</h2>
-                        <ul class="contact-info">
-                            <li><i class="fas fa-envelope"></i> vivekraj65407@gmail.com</li>
-                            <li><i class="fas fa-phone"></i> +91 8296924601</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Bangalore, India</li>
-                            <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/vivek-gr" target="_blank">linkedin.com/in/vivek-gr</a></li>
-                            <li><i class="fab fa-github"></i> <a href="https://github.com/vivek-gr" target="_blank">github.com/vivek-gr</a></li>
-                            <li><i class="fas fa-globe"></i> <a href="#" target="_blank">vivekgr.dev</a></li>
-                        </ul>
+                    <!-- Education -->
+                    <div class="resume-card animate delay-1">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024-Present</div>
+                            <div class="timeline-content">
+                                <h3>MCA</h3>
+                                <p class="company">Presidency University, Bangalore</p>
+                                <span class="tag">CGPA: 8.5</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2021 - 2024</div>
+                            <div class="timeline-content">
+                                <h3>BCA</h3>
+                                <p class="company">Nagarjuna Degree College, Bangalore</p>
+                                <span class="tag">CGPA: 8.2</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2019 – 2021</div>
+                            <div class="timeline-content">
+                                <h3>PUC</h3>
+                                <p class="company">Nagarjuna PreUniversity, Bangalore</p>
+                                <span class="tag">Percentage: 85%</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Skills -->
-                    <div class="resume-section" data-aos="fade-right" data-aos-delay="100">
-                        <h2><i class="fas fa-code"></i> Technical Skills</h2>
+                    <div class="resume-card animate delay-1">
+                        <h2><i class="fas fa-code"></i> Skills</h2>
                         <ul class="skills-list">
-                            <li>
-                                <span class="skill-name">HTML/CSS</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%;"></div>
+                            <li class="skill-item">HTML/CSS
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
-                            <li>
-                                <span class="skill-name">JavaScript</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 85%;"></div>
+                            <li class="skill-item">JavaScript
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
-                            <li>
-                                <span class="skill-name">React</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%;"></div>
+                            <li class="skill-item">React
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
-                            <li>
-                                <span class="skill-name">Node.js</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 75%;"></div>
+                            <li class="skill-item">Node.js
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
-                            <li>
-                                <span class="skill-name">MongoDB</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 70%;"></div>
+                            <li class="skill-item">MongoDB
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
-                            <li>
-                                <span class="skill-name">Python</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 65%;"></div>
+                            <li class="skill-item">PHP
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
-                            <li>
-                                <span class="skill-name">Git</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%;"></div>
+                            <li class="skill-item">Data Science
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </li>
+                            <li class="skill-item">Angular JS
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </li>
+                            <li class="skill-item">MS Office
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </li>
+                            <li class="skill-item">Problem Solving
+                                <div class="rating">
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star filled"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Languages -->
-                    <div class="resume-section" data-aos="fade-right" data-aos-delay="150">
+                    <div class="resume-card animate delay-1">
                         <h2><i class="fas fa-language"></i> Languages</h2>
-                        <ul class="languages-list">
-                            <li>
-                                <span class="language-name">English</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="language-name">Hindi</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <span class="language-name">Kannada</span>
-                                <div class="skill-bar">
-                                    <div class="skill-level" style="width: 70%;"></div>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>English</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Hindi</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Kannada</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Certifications -->
-                    <div class="resume-section" data-aos="fade-right" data-aos-delay="200">
-                        <h2><i class="fas fa-certificate"></i> Certifications</h2>
-                        <div class="certifications-mini">
-                            <div class="cert-item">
-                                <h4>Full Stack Development</h4>
-                                <p>Udemy | 2023</p>
-                                <a href="#" class="cert-link">View Credential</a>
-                            </div>
-                            <div class="cert-item">
-                                <h4>React Advanced Concepts</h4>
-                                <p>Coursera | 2022</p>
-                                <a href="#" class="cert-link">View Credential</a>
-                            </div>
-                            <div class="cert-item">
-                                <h4>JavaScript Algorithms</h4>
-                                <p>freeCodeCamp | 2021</p>
-                                <a href="#" class="cert-link">View Credential</a>
-                            </div>
+                    <!-- Interests -->
+                    <div class="resume-card animate delay-1">
+                        <h2><i class="fas fa-heart"></i> Interests</h2>
+                        <div class="interests">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">UI/UX Design</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Photography</span>
+                            <span class="tag">Travel</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Column -->
                 <div class="resume-right">
-                    <!-- Professional Summary -->
-                    <div class="resume-section" data-aos="fade-left">
-                        <h2><i class="fas fa-briefcase"></i> Professional Summary</h2>
-                        <p>Full Stack Developer with 3+ years of experience building responsive web applications using modern JavaScript frameworks. Passionate about creating efficient, scalable solutions with clean code. Strong problem-solving skills and ability to work in agile environments. Specialized in MERN stack development with expertise in RESTful API design and database optimization.</p>
+                    <!-- Profile -->
+                    <div class="resume-card animate delay-2">
+                        <h2><i class="fas fa-user"></i> Profile</h2>
+                        <p>A motivated and goal-oriented Full Stack Developer with experience in building scalable web applications using modern technologies. Passionate about creating efficient, user-friendly solutions and continuously learning new skills to stay at the forefront of web development.</p>
                     </div>
 
-                    <!-- Experience -->
-                    <div class="resume-section" data-aos="fade-left" data-aos-delay="100">
-                        <h2><i class="fas fa-suitcase"></i> Work Experience</h2>
+                    <!-- Work Experience -->
+                    <div class="resume-card animate delay-2">
+                        <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
                         <div class="timeline-item">
-                            <div class="timeline-date">2021 - Present</div>
+                            <div class="timeline-date">Feb 2025 – Present</div>
                             <div class="timeline-content">
-                                <h3>Senior Web Developer</h3>
-                                <p class="company">TechSolutions Inc., Bangalore</p>
+                                <h3>Full Stack Developer</h3>
+                                <p class="company">Nexinbe, Bangalore</p>
                                 <ul>
-                                    <li>Led development of 10+ React applications with Node.js backends</li>
-                                    <li>Improved application performance by 40% through code optimization</li>
-                                    <li>Mentored 3 junior developers in best practices</li>
-                                    <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
-                                    <li>Designed database architecture for high-traffic applications</li>
-                                    <li>Integrated third-party services including payment gateways and analytics</li>
+                                    <li>Developed and maintained full-stack web applications using technologies like HTML, CSS, JavaScript, React.js, Node.js, Express.js, and MongoDB/MySQL</li>
+                                    <li>Designed and implemented RESTful APIs to support frontend functionality and third-party integration</li>
+                                    <li>Optimized application performance, reducing load times by 40% through code optimization and caching strategies</li>
+                                    <li>Collaborated with UX designers to implement responsive and accessible interfaces</li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2019 - 2021</div>
-                            <div class="timeline-content">
-                                <h3>Web Developer</h3>
-                                <p class="company">Digital Creations, Bangalore</p>
-                                <ul>
-                                    <li>Developed and maintained 15+ client websites</li>
-                                    <li>Implemented responsive designs improving mobile UX</li>
-                                    <li>Integrated third-party APIs for payment processing</li>
-                                    <li>Reduced page load times by 30% through asset optimization</li>
-                                    <li>Collaborated with designers to implement UI/UX best practices</li>
-                                    <li>Automated deployment processes saving 10+ hours weekly</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2018 - 2019</div>
-                            <div class="timeline-content">
-                                <h3>Frontend Developer Intern</h3>
-                                <p class="company">WebCraft Studios, Bangalore</p>
-                                <ul>
-                                    <li>Assisted in developing responsive web interfaces</li>
-                                    <li>Fixed UI bugs and improved cross-browser compatibility</li>
-                                    <li>Participated in code reviews and team meetings</li>
-                                    <li>Created documentation for frontend components</li>
-                                </ul>
+                                <div class="tags">
+                                    <span class="tag">React</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">MongoDB</span>
+                                    <span class="tag">REST API</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Education -->
-                    <div class="resume-section" data-aos="fade-left" data-aos-delay="150">
-                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <!-- Internship -->
+                    <div class="resume-card animate delay-2">
+                        <h2><i class="fas fa-laptop-code"></i> Internship</h2>
                         <div class="timeline-item">
-                            <div class="timeline-date">2015 - 2019</div>
+                            <div class="timeline-date">Jan 2024 – June 2024</div>
                             <div class="timeline-content">
-                                <h3>Bachelor of Engineering in Computer Science</h3>
-                                <p class="company">VTU University, Bangalore</p>
+                                <h3>Java Full Stack Development Intern</h3>
                                 <ul>
-                                    <li>Graduated with First Class Honors (75%)</li>
-                                    <li>Specialized in Web Technologies and Database Systems</li>
-                                    <li>Final Year Project: E-commerce Platform using MERN Stack</li>
-                                    <li>Active member of Computer Science Society</li>
+                                    <li>Collaborated in an Agile team, participated in sprint planning, stand-ups, and code reviews using tools like JIRA and Git</li>
+                                    <li>Implemented authentication and authorization using Spring Security and JWT tokens</li>
+                                    <li>Used Postman for API testing and Swagger for API documentation</li>
+                                    <li>Developed responsive front-end components using React and Material UI</li>
                                 </ul>
+                                <div class="tags">
+                                    <span class="tag">Java</span>
+                                    <span class="tag">Spring Boot</span>
+                                    <span class="tag">React</span>
+                                    <span class="tag">JWT</span>
+                                </div>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-date">2013 - 2015</div>
+                            <div class="timeline-date">Nov 2024 – Dec 2024</div>
                             <div class="timeline-content">
-                                <h3>Pre-University College (PCMB)</h3>
-                                <p class="company">Sri Chaitanya College, Bangalore</p>
+                                <h3>Marketing Intern</h3>
+                                <p class="company">SFA, Bangalore</p>
                                 <ul>
-                                    <li>Scored 92% in final examinations</li>
-                                    <li>Participated in inter-college science competitions</li>
+                                    <li>Developed and executed marketing strategies to enhance brand visibility</li>
+                                    <li>Analyzed market trends to inform product positioning and promotional campaigns</li>
+                                    <li>Created content for social media platforms, increasing engagement by 35%</li>
                                 </ul>
+                                <div class="tags">
+                                    <span class="tag">Digital Marketing</span>
+                                    <span class="tag">SEO</span>
+                                    <span class="tag">Content Creation</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Projects -->
-                    <div class="resume-section" data-aos="fade-left" data-aos-delay="200">
-                        <h2><i class="fas fa-project-diagram"></i> Key Projects</h2>
+                    <div class="resume-card animate delay-3">
+                        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
                         <div class="project-item">
-                            <h3>E-commerce Dashboard</h3>
-                            <p class="project-tech">React, Node.js, MongoDB, Redux</p>
+                            <h3>Blood Donor Management (Web)</h3>
+                            <p class="project-tech">Technologies: HTML, CSS, JavaScript, PHP, MySQL</p>
                             <ul>
-                                <li>Built admin dashboard with real-time analytics and inventory management</li>
-                                <li>Integrated with payment gateways and shipping APIs</li>
-                                <li>Reduced server response time by 35% through query optimization</li>
+                                <li>Developed a platform connecting blood donors with recipients, featuring real-time notifications and geolocation services</li>
+                                <li>Implemented secure user authentication and database management with over 500 registered users</li>
+                                <li>Redesigned UI/UX based on user feedback, improving conversion rates by 25%</li>
                             </ul>
+                            <div class="project-links">
+                                <a href="#" class="btn-outline" style="margin-right: 10px;">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn-outline">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
                         </div>
                         <div class="project-item">
-                            <h3>Task Management App</h3>
-                            <p class="project-tech">React, Firebase, Material UI</p>
+                            <h3>Portfolio Profile (Web)</h3>
+                            <p class="project-tech">Technologies: HTML, CSS, JavaScript</p>
                             <ul>
-                                <li>Developed collaborative task management application</li>
-                                <li>Implemented real-time updates using Firebase</li>
-                                <li>Added drag-and-drop functionality for task organization</li>
+                                <li>Created a responsive personal portfolio website with dark mode and smooth animations</li>
+                                <li>Implemented a contact form with email integration</li>
+                                <li>Optimized for performance with 95+ Lighthouse score</li>
                             </ul>
+                            <div class="project-links">
+                                <a href="#" class="btn-outline" style="margin-right: 10px;">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn-outline">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
                         </div>
                         <div class="project-item">
-                            <h3>Portfolio Website</h3>
-                            <p class="project-tech">HTML, CSS, JavaScript, GSAP</p>
+                            <h3>Restaurant Management (Web)</h3>
+                            <p class="project-tech">Technologies: React, Node.js, MongoDB</p>
                             <ul>
-                                <li>Created interactive portfolio with animations</li>
-                                <li>Optimized for performance and accessibility</li>
-                                <li>Implemented dark mode and responsive design</li>
+                                <li>Built a full-stack restaurant management system with menu management and order tracking</li>
+                                <li>Implemented JWT authentication and role-based access control</li>
+                                <li>Developed real-time order updates using Socket.io</li>
                             </ul>
+                            <div class="project-links">
+                                <a href="#" class="btn-outline" style="margin-right: 10px;">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="#" class="btn-outline">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Achievements -->
-                    <div class="resume-section" data-aos="fade-left" data-aos-delay="250">
-                        <h2><i class="fas fa-trophy"></i> Achievements</h2>
-                        <ul class="achievements-list">
-                            <li>Employee of the Month (TechSolutions Inc.) - June 2022</li>
-                            <li>Hackathon Winner - CodeFest 2021</li>
-                            <li>Published article on "Optimizing React Performance" in DevJournal</li>
-                            <li>Speaker at Bangalore Web Developers Meetup 2020</li>
+                    <!-- Certifications -->
+                    <div class="resume-card animate delay-3">
+                        <h2><i class="fas fa-certificate"></i> Certifications</h2>
+                        <ul>
+                            <li><strong>Power BI</strong> — ICT Academy (Jul 2023 – Aug 2023)
+                                <a href="#" class="tag" style="margin-left: 10px;">View Credential</a>
+                            </li>
+                            <li><strong>Angular JS</strong> — NDC (Jan 2023 – Feb 2023)
+                                <a href="#" class="tag" style="margin-left: 10px;">View Credential</a>
+                            </li>
+                            <li><strong>Data Science</strong> — NDC (Mar 2022 – Apr 2023)
+                                <a href="#" class="tag" style="margin-left: 10px;">View Credential</a>
+                            </li>
+                            <li><strong>CRM System</strong> — NIIT Foundation (Oct 2024 – Nov 2024)
+                                <a href="#" class="tag" style="margin-left: 10px;">View Credential</a>
+                            </li>
+                            <li><strong>HTML & CSS</strong> — NDC (Nov 2023 – Dec 2023)
+                                <a href="#" class="tag" style="margin-left: 10px;">View Credential</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -301,11 +1005,14 @@
         <div class="container">
             <p>&copy; <span id="year"></span> Vivek GR. All rights reserved.</p>
             <div class="social-icons">
-                <a href="https://linkedin.com/in/vivek-gr" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/vivek-gr" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com/in/vivek-gr" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/vivek-gr" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
+            <p style="margin-top: 20px;">
+                <a href="mailto:vivekraj65407@gmail.com" style="color: var(--primary-color);">vivekraj65407@gmail.com</a>
+            </p>
         </div>
     </footer>
 
@@ -314,52 +1021,14 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- JavaScript -->
     <script>
-        // Initialize AOS animation
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Back to top button
-        const backToTopButton = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.style.opacity = '1';
-            } else {
-                backToTopButton.style.opacity = '0';
-            }
+            const btn = document.getElementById('backToTop');
+            btn.style.opacity = window.scrollY > 300 ? '1' : '0';
         });
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Theme toggle
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const icon = themeToggle.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
-
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-</body>
-</html>
+        document.getElementById('
